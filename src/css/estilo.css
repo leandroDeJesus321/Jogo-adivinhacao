@@ -1,0 +1,117 @@
+/* Definindo ocupação da altura do html e body para 100%. */
+html, body{
+    height: 100%;
+
+}
+
+/* Estilizando o corpo do html para centraliza e adicionar cor de fundo. */
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(104, 82, 201);
+    user-select: none;
+
+}
+
+/* Container do jogo. */
+.container{
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    gap: 2rem;
+    background: linear-gradient(321deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 33%, rgba(0,212,255,1) 100%);
+    padding: 2rem 4rem;
+}
+
+/* Título do jogo */
+h2{
+    font-size: 3rem;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+}
+
+h3{
+    color: #ffffff;
+}
+
+/* Botão de reiniciar o jogo */
+.reset{
+    width: 100%;
+    
+    padding: 1rem 1.25rem;
+    border: none;
+
+    font-size: 1.25rem;
+    letter-spacing: 0.125rem;
+    font-family: 'Times New Roman', Times, serif;
+    
+}
+
+.reset:hover{
+    cursor: pointer;
+    transition: 0.5s;
+
+    color: white;
+    background-color: blueviolet;
+
+}
+
+.game{
+    width: 30rem;
+    height: 30rem;
+    border: 1px solid whitesmoke;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+
+    transform-style: preserve-3d;
+    perspective: 500px;
+
+}
+
+.item{
+    position: relative;
+    
+    width: 6.25rem;
+    height: 6.25rem;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+    font-size: 3rem;
+    transform: rotateY(0deg);
+    transition: 0.5s;
+
+}
+
+.item::after{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: #404040;
+    transition: 0.25s;
+    transform: rotateY(0deg);
+    backface-visibility: hidden;
+    
+}
+
+.item.boxOpen{
+    transform: rotateY(180deg);
+
+}
+
+.boxOpen::after,
+.boxMatch::after{
+    transform: rotateY(180deg);
+
+}
